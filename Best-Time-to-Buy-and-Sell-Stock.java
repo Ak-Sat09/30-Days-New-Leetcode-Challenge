@@ -6,7 +6,7 @@ class Solution {
         if(arr[i] < minPrice){
             minPrice = arr[i];
         }
-        profit = Math.max(profit,arr[i]-minPrice);
+        profit = Math.max(profit , arr[i]-minPrice);
      }
      return profit;
     }
