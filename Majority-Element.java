@@ -3,11 +3,12 @@ class Solution {
         int n = arr.length;
         int can = arr[0];
         int count = 0;
+
         for(int i : arr){
             if(count == 0){
                 can = i;
             }
-             if(i == can){
+            if(i == can){
                 count++;
             }
             else{
@@ -19,10 +20,10 @@ class Solution {
             if(i == can){
                 freq++;
             }
-        } 
+        }
         if(freq > n/2){
             return can;
-        }   
-        return -1;
         }
+        return -1;
+    }
 }
