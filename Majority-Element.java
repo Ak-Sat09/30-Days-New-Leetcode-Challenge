@@ -3,7 +3,6 @@ class Solution {
         int n = arr.length;
         int can = arr[0];
         int count = 0;
-
         for(int i : arr){
             if(count == 0){
                 can = i;
@@ -24,6 +23,6 @@ class Solution {
         if(freq > n/2){
             return can;
         }
-        return -1;
+       return -1;
     }
 }
