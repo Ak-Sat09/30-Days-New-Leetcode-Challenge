@@ -6,8 +6,8 @@ class Solution {
         for(int i : arr){
             if(count == 0){
                 can = i;
-            }
-            if(i == can){
+                count = 1;
+            }else if(i == can){
                 count++;
             }
             else{
@@ -20,9 +20,10 @@ class Solution {
                 freq++;
             }
         }
+
         if(freq > n/2){
             return can;
         }
-       return -1;
+        return -1;
     }
 }
