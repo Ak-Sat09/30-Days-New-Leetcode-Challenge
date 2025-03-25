@@ -5,8 +5,8 @@
       Stack<Integer> stack = new Stack<>();
       for(int i=0; i<n; i++){
         while(!stack.isEmpty() && arr[stack.peek()] < arr[i]){
-          int idx =  stack.pop();
-          res[idx] = i-idx;
+            int idx = stack.pop();
+            res[idx] = i-idx;
         }
         stack.push(i);
       }
