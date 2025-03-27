@@ -1,12 +1,4 @@
- import java.util.*;
-
-class TreeNode {
-    int val;
-    TreeNode left, right;
-    TreeNode(int x) { val = x; }
-}
-
-public class Solution {
+ public class Solution {
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
         List<List<Integer>> res = new ArrayList<>();
         zigzag(root, res);
@@ -14,32 +6,25 @@ public class Solution {
     }
 
     public static void zigzag(TreeNode root, List<List<Integer>> res) {
-        if (root == null) return;
-
+        if(root == null)return;
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
-        boolean isValid = true; // Corrected variable name
-
-        while (!queue.isEmpty()) {
+        boolean isValid = true;
+        while(!queue.isEmpty()){
             int n = queue.size();
-            LinkedList<Integer> curr = new LinkedList<>(); // Changed to LinkedList
-
-            for (int i = 0; i < n; i++) {
+            List<Integer> curr = new ArrayList<>();
+            for(int i=0; i<n; i++){
                 TreeNode node = queue.poll();
-                if (isValid) {
-                    curr.addLast(node.val); // Works with LinkedList
-                } else {
-                    curr.addFirst(node.val); // Works with LinkedList
+                if(isValid){
+                    curr.addLast(node.val);
+                }else{
+                    curr.addFirst(node.val);
                 }
-
-                if (node.left != null) queue.offer(node.left);
-                if (node.right != null) queue.offer(node.right);
+                if(node.left != null)queue.add(node.left);
+                if(node.right != null)queue.add(node.right);
             }
-
+            isValid= !isValid;
             res.add(curr);
-            isValid = !isValid; // Toggle direction
         }
     }
-
-    
 }
