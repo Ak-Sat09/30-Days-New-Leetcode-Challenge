@@ -5,7 +5,7 @@ class Solution {
         for(int i : arr){
             high = Math.max(high , i);
         }
-        int res = high;
+        int res = 0;
         while(low <= high){
             int mid = low +(high-low)/2;
             int hrs = 0;
