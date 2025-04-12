@@ -3,7 +3,7 @@
      Stack<Integer> stack = new Stack<>();
      int n = arr.length;
      int res[] = new int[n];
-     for(int i=0; i<arr.length; i++){
+     for(int i=0; i<n; i++){
         while(!stack.isEmpty() && arr[stack.peek()] < arr[i]){
             int idx = stack.pop();
             res[idx] = i-idx;
